@@ -15,10 +15,23 @@ curl -sSL https://get.docker.com | sh
 
 ### 1.2 - Create the docker image from source
 
+Run the following commands:
+
 ```bash
 git clone https://github.com/hwdsl2/docker-ipsec-vpn-server.git
 cd docker-ipsec-vpn-server
 docker build -t hwdsl2/ipsec-vpn-server .
+```
+At the end of building the image, you should have a new image called:
+
+```text
+hwdsl2/ipsec-vpn-server:latest 
+```
+
+You can verify this by running:
+
+```bas
+docker images ls
 ```
 
 ### 1.3 Create the environment file
@@ -44,6 +57,7 @@ If you want to change the Google DNS server, add the following lines:
 VPN_DNS_SRV1=1.1.1.1
 VPN_DNS_SRV2=1.0.0.1
 ```
+
 ### 1.2 Verify IPsec NETKEY kernel module
 
 Run the following command:
@@ -51,6 +65,8 @@ Run the following command:
 ```bash
 sudo modprobe af_key
 ```
+
+> **Note:** If you get an error this may indicate a problem with your Noobs installation
 
 ### 1.3 Launch the container
 
