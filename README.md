@@ -2,7 +2,7 @@
 
 ## 1 - Instructions
 
-I had been looking for a way to turn my Raspberry PI into a VPN server so that I can access my Octopi from my phone while away. I tried a few continers and finally got this one working. Sharing the knowledge with the community in case this helps anyone.
+I had been looking for a way to turn my Raspberry PI into a VPN server so that I could access my OctoPi server from my phone while I was away. I tried a few continers and finally got this one working. Sharing the knowledge with the community in case this helps anyone.
 
 ### 1.1 - Install Docker
 
@@ -11,11 +11,11 @@ Run the following command:
 ```bash
 curl -sSL https://get.docker.com | sh
 ```
-> **Note:** remember to add the pi user to the docker group. The instructions are provided when the scripts finishes running.
+> **Note:** remember to add the pi user to the docker group to avoid having to type sudo. The instructions are provided when the scripts finishes running. You will need to reboot the server.
 
 ### 1.2 - Create the docker image from source
 
-Note there's an image on Docker hub, but if you run that image, it will not work. These commands will create an image that will run from the Pi:
+Note there is already an image on Docker hub. That image will NOT run on the Pi. Follow the commands below to build an image that will run on the Pi:
 
 ```bash
 git clone https://github.com/hwdsl2/docker-ipsec-vpn-server.git
@@ -34,14 +34,28 @@ You can verify this by running:
 docker images ls
 ```
 
-### 1.3 Create the environment file
+### 1.3 Create the ```vpn.env```text file
 
-Create the (``` nano vpn.env``` file and add the following lines:
+Create a file called vpn.env:
+
+```bash
+nano vpn.env
+```
+
+ Add the following lines:
 
 ```text
 VPN_IPSEC_PSK=your_ipsec_pre_shared_key
 VPN_USER=your_vpn_username
 VPN_PASSWORD=your_vpn_password
+```
+
+Example
+
+```text
+VPN_IPSEC_PSK=jkLop1QtFz9
+VPN_USER=john
+VPN_PASSWORD=P@ssw0rd
 ```
 
 If you want to have more users add the following lines
