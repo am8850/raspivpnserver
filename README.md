@@ -1,8 +1,17 @@
-# Raspberry PI VPN Server using a docker container
+# Raspberry Pi VPN Server using a Docker container
 
 ## 1 - Instructions
 
+I had been looking for a way to replace my MAC MINI as the VPN server with a Raspberry PI. I tried a few continers and finally got this one working. I am not able to access my Octopi from my phone. Sharing the knowledge with the community in case this helps anyone.
+
 ### 1.1 - Install Docker
+
+Run the following command:
+
+```bash
+curl -sSL https://get.docker.com | sh
+```
+> **Note:** remember to add the pi user to the docker group. The instructions are provided when the scripts finishes running.
 
 ### 1.2 - Create the docker image from source
 
@@ -57,3 +66,4 @@ docker run \
     -d --privileged \
     hwdsl2/ipsec-vpn-server
 ```
+
