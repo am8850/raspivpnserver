@@ -4,7 +4,7 @@
 
 I had been looking for a way to turn my Raspberry PI into a VPN server so that I could access my OctoPi server from my phone while I was away. I tried a few continers and finally got this one working. Sharing the knowledge with the community in case this helps anyone.
 
-### 1.0 Connect the Raspberry Pi to Ethernet && Assignt it a static IP
+### 1.0 Connect the Raspberry Pi to Ethernet And Assignt it a static IP
 
 For the docker image to work, make sure to connec the Pi tthrough the Ethernet port to your router and assign it a static IP.
 
