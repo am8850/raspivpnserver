@@ -6,7 +6,7 @@ I had been looking for a way to turn my Raspberry PI into a VPN server so that I
 
 ### 1.0 Connect the Raspberry Pi to Ethernet && Assignt it a static IP
 
-For this to work make sure to connec the Pi tthrough the Ethernet port to your router and assign it a static IP.
+For the docker image to work, make sure to connec the Pi tthrough the Ethernet port to your router and assign it a static IP.
 
 ### 1.1 - Install Docker
 
